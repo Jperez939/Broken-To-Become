@@ -83,12 +83,32 @@
 }
 
 html {
-    background-color: var(--mutedblack-color);
-
+    cursor: pointer;
 }
 
-.title {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: var(--mutedblack-color);
+    background: url('glass\ background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Hidden title until shatter */
+#main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
     color: var(--mistycloud-color);
     font-family: Laurel;
     font-weight: bolder;
+    white-space: nowrap;
 }
