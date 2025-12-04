@@ -131,12 +131,66 @@ body {
     animation: shake 0.5s infinite ease-in-out;
 }
 
+#dynamic-bgb {
+    position: fixed;
+    top: -50%;  /* extend beyond viewport */
+    left: -14%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(5, 6, 7, 0.5),
+            rgba(243, 243, 238, 0.2)
+        ),
+        url('../photos/broken-background.jpg') center/cover no-repeat;
+    filter: brightness(0.8) blur(1px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
+}
+
+#dynamic-bgs {
+    position: fixed;
+    top: -50%;  /* extend beyond viewport */
+    left: -14%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(5, 6, 7, 0.5),
+            rgba(243, 243, 238, 0.2)
+        ),
+        url('../photos/scatter-background.jpg') center/cover no-repeat;
+    filter: brightness(0.8) blur(1px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
+}
+
+#dynamic-bgp {
+    position: fixed;
+    top: -50%;  /* extend beyond viewport */
+    left: -14%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(5, 6, 7, 0.5),
+            rgba(243, 243, 238, 0.2)
+        ),
+        url('../photos/pause-background.jpg') center/cover no-repeat;
+    filter: brightness(0.8) blur(1px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
+}
+
 .hover-word-broken {
     display: inline-block;
     transition: transform 0.8s ease-out, filter 0.8s ease-out;
 }
 .hover-word-broken:hover {
-    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    transform: rotateX(10deg) rotateY(10deg) scale(2);
     filter: blur(2px);
     color: #dfe339;
     transition: 1s ease-in;
@@ -147,7 +201,7 @@ body {
     transition: transform 0.8s ease-out, filter 0.8s ease-out;
 }
 .hover-word-scatter:hover {
-    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    transform: rotateX(10deg) rotateY(10deg) scale(2);
     filter: blur(2px);
     color: #f37320;
     transition: 1s ease-in;
@@ -158,7 +212,7 @@ body {
     transition: transform 0.8s ease-out, filter 0.8s ease-out;
 }
 .hover-word-pause:hover {
-    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    transform: rotateX(10deg) rotateY(10deg) scale(2);
     filter: blur(2px);
     color: #d477b0;
     transition: 1s ease-in;
@@ -185,8 +239,7 @@ body {
     font-family: 'Source Sans Pro';
 }
 .quote-section{
-    background-color: var(--mistycloud-color);
-    opacity: 70%;
+    background-color: rgba(243, 243, 238, 0.3);
     min-height: 50vh;
     justify-content: cent1er;
     align-items: center;
@@ -199,6 +252,8 @@ body {
     font-weight: 700;
     font-style: italic; 
     padding: 100px 150px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    animation: shake 0.5s infinite ease-in-out;
 }
 .intro{
     font-weight: 700;
@@ -219,6 +274,8 @@ body {
     font-weight: 700;
     font-style: italic; 
     padding: 100px 150px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    animation: shake 0.5s infinite ease-in-out;
 }
 
 .pause-intro{
@@ -231,6 +288,8 @@ body {
     font-weight: 700;
     font-style: italic; 
     padding: 100px 150px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    animation: shake 0.5s infinite ease-in-out;
 }
 
 .Footer {

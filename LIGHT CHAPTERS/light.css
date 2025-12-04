@@ -110,6 +110,22 @@ body {
             drop-shadow(0 0 6px rgba(5, 6, 7,0.4));
 }
 
+#dot-shards {
+    background: linear-gradient(
+            to bottom,
+            rgba(243, 243, 238, 0.8),
+            rgba(243, 243, 238, 0.8)
+        ),
+        url('../photos/dot-graphic.png') center/cover no-repeat;
+    position: fixed;
+    z-index: -1;
+    top: -5%;  /* extend beyond viewport */
+    left: -5%;
+    width: 220%;
+    height: 220%;
+    opacity: 50%;
+}
+
 #hero {
     position: relative;
     height: 100vh; /* Full viewport */
@@ -128,6 +144,32 @@ body {
     color: var(--mutedblack-color);
     font-family: 'Laurel';
     font-weight: bolder;
+}
+
+.soft-pulse-title {
+    position: relative;
+    display: inline-block;
+    animation: softPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0px 0px 3px rgba(255,255,255,0.3));
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 10%;
+        filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.55));
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0px 0px 3px rgba(255,255,255,0.3));
+    }
 }
 
 #assemble-letterspacing {
@@ -151,8 +193,7 @@ body {
     font-family: 'Source Sans Pro';
 }
 .quote-section{
-    background-color: var(--mutedblack-color);
-    opacity: 70%;
+    background-color: rgba(5, 6, 7, 0.4);
     min-height: 50vh;
     justify-content: cent1er;
     align-items: center;
@@ -165,13 +206,38 @@ body {
     font-weight: 700;
     font-style: italic; 
     padding: 100px 150px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    animation: pulse 2.8s ease-in-out infinite;
 }
 .bind-quote{
     color: var(--mistycloud-color);
     font-weight: 700;
     font-style: italic; 
     padding: 150px 150px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s ease-in-out infinite;
 }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0px 0px 3px rgba(255,255,255,0.3));
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 50%;
+        filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.55));
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0px 0px 3px rgba(255,255,255,0.3));
+    }
+}
+
 .intro{
     font-weight: 700;
     font-style: italic;
@@ -205,6 +271,60 @@ body {
     text-decoration-line: none;
     font-weight: 800;
     font-style: italic;
+}
+
+#dynamic-bga {
+    position: fixed;
+    top: -50%;  /* extend beyond viewport */
+    left: -40%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(243, 243, 238, 0.8),
+            rgba(243, 243, 238, 0.7)
+        ),
+        url('../photos/assemble-background.jpg') center/cover no-repeat;
+    filter: brightness(1) blur(1px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
+}
+
+#dynamic-bgbd {
+    position: fixed;
+    top: -50%;  /* extend beyond viewport */
+    left: -30%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(243, 243, 238, 0.9),
+            rgba(243, 243, 238, 0.8)
+        ),
+        url('../photos/bind-background.jpg') center/cover no-repeat;
+    filter: brightness(1) blur(2px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
+}
+
+#dynamic-bgbe {
+    position: fixed;
+    top: -20%;  /* extend beyond viewport */
+    left: -5%;
+    width: 150%;
+    height: 170%;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(243, 243, 238, 0.8),
+            rgba(243, 243, 238, 0.7)
+        ),
+        url('../photos/become-background.jpg') center/cover no-repeat;
+    filter: brightness(1) blur(1px);
+    transition: transform 0.1s ease-out;
+    z-index: -2;
 }
 
 .hover-word {
