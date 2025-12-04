@@ -82,16 +82,32 @@
     font-style: italic;
 }
 
-
-html {
-    cursor: pointer;
+* {
+    cursor: none !important;
 }
-
 body {
     background: var(--mutedblack-color);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+#cursor-glow {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url("photos/cursor-shard.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    transform: translate(-10%, -10%);
+    z-index: 99999;
+
+    /* GLOW EFFECT */
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.9))
+            drop-shadow(0 0 4px rgba(255,255,255,0.7))
+            drop-shadow(0 0 6px rgba(255,255,255,0.4));
 }
 
 #hero {
@@ -122,11 +138,20 @@ body {
     letter-spacing: -8px;
 }
 
-@media only screen and (max-width: 768px) {
-    #main-title {
-        font-size:18vw;
-        line-height: 80px;
-    }
+#glass-shards {
+    background: linear-gradient(
+            to bottom,
+            rgba(5, 6, 7, 0.4),
+            rgba(5, 6, 7, 0.4)
+        ),
+        url('photos/realistic\ glass\ pieces.png') center/cover no-repeat;
+    position: fixed;
+    z-index: -1;
+    top: -5%;  /* extend beyond viewport */
+    left: -5%;
+    width: 120%;
+    height: 120%;
+    opacity: 50%;
 }
 
 #dynamic-bg {
@@ -135,20 +160,156 @@ body {
     left: -50%;
     width: 210%;
     height: 160%;
-    background: url('glass background.jpg') center/cover no-repeat;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(5, 6, 7, 0.5),
+            rgba(243, 243, 238, 0.2)
+        ),
+        url('photos/glass\ background.jpg') center/cover no-repeat;
     filter: brightness(0.8) blur(1px);
     transition: transform 0.1s ease-out;
-    z-index: -1;
+    z-index: -2;
 }
+
 .Section {
-    min-height: 50vh;
-    display: flex;
+    min-height: 60vh;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
     color: var(--mistycloud-color);
     text-align: center;
+    font-family: 'Source Sans Pro';
+    font-weight: 500;
+    font-style: italic;
+    font-size: 2vw;
+}
+
+.hover-word {
+    display: inline-block;
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+.hover-word:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    filter: blur(2px);
+}
+
+#broken-word {
+    letter-spacing: 25px;
     font-family: 'Laurel';
     font-weight: bolder;
+    font-size: 4vw;
     color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+#scatter-word {
+    letter-spacing: 18px;
+    font-family: 'Laurel';
+    font-weight: bolder;
+    font-size: 4vw;
+    color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+#pause-word {
+    letter-spacing: 10px;
+    font-family: 'Laurel';
+    font-weight: bolder;
+    font-size: 4vw;
+    color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+#assemble-word {
+    letter-spacing: 5px;
+    font-family: 'Laurel';
+    font-weight: bolder;
+    font-size: 4vw;
+    color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+#bind-word {
+    letter-spacing: -1px;
+    font-family: 'Laurel';
+    font-weight: bolder;
+    font-size: 4vw;
+    color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+#become-word {
+    letter-spacing: -5px;
+    font-family: 'Laurel';
+    font-weight: bolder;
+    font-size: 4vw;
+    color: var(--mistycloud-color);
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+
+@media only screen and (max-width: 800px) {
+    #main-title {
+        font-size:18vw;
+        line-height: 80px;
+    }
+    .Section {
+        font-size: 4vw;
+    }
+    #scatter-word {
+        font-size: 8vw;
+    }
+    #broken-word {
+        font-size: 8vw;
+    }
+    #pause-word {
+        font-size: 8vw;
+    }
+    #assemble-word {
+        font-size: 8vw;
+    }
+    #bind-word {
+        font-size: 8vw;
+    }
+    #become-word {
+        font-size: 8vw;
+    }
+    .About-Section {
+        min-height: 80vh;
+        font-size: 3vw;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.Footer {
+    min-height: 5vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+}
+
+#footer-text {
+    color: var(--mistycloud-color);
+    font-size: 1vw;
+    text-decoration-line: none;
+    cursor: url('photos/cursor-shard.png') 0 0, auto;
+}
+
+.About-Section {
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    color: var(--mistycloud-color);
+    text-align: center;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5vw;
+    padding-left: 380px;
+    padding-right: 380px;
+}
+
+.typeface-word {
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: italic;
 }
