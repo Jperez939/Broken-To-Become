@@ -195,6 +195,15 @@ body {
     color: #dfe339;
     transition: 1s ease-in;
 }
+.hover-word {
+    display: inline-block;
+    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+.hover-word:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    filter: blur(2px);
+}
 
 .hover-word-scatter {
     display: inline-block;
