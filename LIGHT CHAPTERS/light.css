@@ -258,6 +258,8 @@ body {
     font-style: normal;
     word-spacing: 40px;
     padding-top: 20px;
+    position: sticky;
+    top: 0;
 }
 
 #footer-text {
@@ -360,7 +362,9 @@ body {
   line-height: 1;
   font-family: 'Source Sans Pro';
   font-style: italic;
-  animation: softFade 2s ease-in-out;
+  display: inline-block;
+  animation: softPulse 3.5s ease-in-out infinite;
+  padding-top: 15%;
 }
 
 /* Overlapping layers */

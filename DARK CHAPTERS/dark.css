@@ -311,6 +311,8 @@ body {
     font-style: normal;
     word-spacing: 40px;
     padding-top: 20px;
+    position: sticky;
+    top: 0;
 }
 
 #footer-text {
